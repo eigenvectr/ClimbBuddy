@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct TimerItem : Identifiable{
+    var id = UUID()
+    var title: String
+    // Think of more things that will be in the timer.
+}
+
+struct FolderItem : Identifiable{
+    var id = UUID()
+    var title: String
+    var timers: [TimerItem] // A folder contains an array of timers
+}
