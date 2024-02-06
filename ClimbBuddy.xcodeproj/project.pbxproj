@@ -15,6 +15,7 @@
 		213573822B6060C400781620 /* ClimbBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573812B6060C400781620 /* ClimbBuddyUITests.swift */; };
 		213573842B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */; };
 		213573912B69820200781620 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573902B69820200781620 /* TimerModel.swift */; };
+		213573932B72E64500781620 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573922B72E64500781620 /* CountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		213573812B6060C400781620 /* ClimbBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbBuddyUITests.swift; sourceTree = "<group>"; };
 		213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		213573902B69820200781620 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		213573922B72E64500781620 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				213573662B6060C300781620 /* ClimbBuddyApp.swift */,
 				213573682B6060C300781620 /* ContentView.swift */,
+				213573922B72E64500781620 /* CountdownView.swift */,
 				2135736A2B6060C400781620 /* Assets.xcassets */,
 				2135736C2B6060C400781620 /* Preview Content */,
 				213573902B69820200781620 /* TimerModel.swift */,
@@ -262,6 +265,7 @@
 			files = (
 				213573912B69820200781620 /* TimerModel.swift in Sources */,
 				213573692B6060C300781620 /* ContentView.swift in Sources */,
+				213573932B72E64500781620 /* CountdownView.swift in Sources */,
 				213573672B6060C300781620 /* ClimbBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
