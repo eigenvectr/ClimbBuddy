@@ -41,7 +41,6 @@ struct ContentView: View {
                 Button("Reset", action: vm.reset)
                     .tint(.red)
             }
-            .frame(width: width)
             
         }
         .onReceive(timer) { _ in
