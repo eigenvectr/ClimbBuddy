@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Tbl_Exercise" representedClassName="Tbl_Exercise" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="timer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Timer"/>
+    </entity>
+    <entity name="Tbl_Timer" representedClassName="Tbl_Timer" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="numberOfSets" optional="YES" attributeType="String"/>
+        <relationship name="exercises" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Exercise"/>
+    </entity>
+</model>

@@ -16,6 +16,15 @@
 		213573842B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */; };
 		213573912B69820200781620 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573902B69820200781620 /* TimerModel.swift */; };
 		213573932B72E64500781620 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573922B72E64500781620 /* CountdownView.swift */; };
+		21A916B12B7A890500619210 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916A92B7A890500619210 /* Inter-SemiBold.ttf */; };
+		21A916B22B7A890500619210 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AA2B7A890500619210 /* Inter-Bold.ttf */; };
+		21A916B32B7A890500619210 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AB2B7A890500619210 /* Inter-Medium.ttf */; };
+		21A916B42B7A890500619210 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AC2B7A890500619210 /* Inter-Thin.ttf */; };
+		21A916B52B7A890500619210 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AD2B7A890500619210 /* Inter-Light.ttf */; };
+		21A916B62B7A890500619210 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AE2B7A890500619210 /* Inter-ExtraLight.ttf */; };
+		21A916B72B7A890500619210 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AF2B7A890500619210 /* Inter-Regular.ttf */; };
+		21A916B82B7A890500619210 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */; };
+		21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21A916BA2B7A89FC00619210 /* APPDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,15 @@
 		213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		213573902B69820200781620 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		213573922B72E64500781620 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		21A916A92B7A890500619210 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		21A916AA2B7A890500619210 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		21A916AB2B7A890500619210 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		21A916AC2B7A890500619210 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		21A916AD2B7A890500619210 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		21A916AE2B7A890500619210 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		21A916AF2B7A890500619210 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		21A916BB2B7A89FC00619210 /* APPDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APPDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +116,12 @@
 		213573652B6060C300781620 /* ClimbBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				21A916BD2B7A8B2E00619210 /* Views */,
+				21A916B92B7A892D00619210 /* Models */,
+				215FC96C2B7A87AB0096DFD2 /* Font */,
 				213573662B6060C300781620 /* ClimbBuddyApp.swift */,
-				213573682B6060C300781620 /* ContentView.swift */,
-				213573922B72E64500781620 /* CountdownView.swift */,
 				2135736A2B6060C400781620 /* Assets.xcassets */,
 				2135736C2B6060C400781620 /* Preview Content */,
-				213573902B69820200781620 /* TimerModel.swift */,
 			);
 			path = ClimbBuddy;
 			sourceTree = "<group>";
@@ -131,6 +149,39 @@
 				213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */,
 			);
 			path = ClimbBuddyUITests;
+			sourceTree = "<group>";
+		};
+		215FC96C2B7A87AB0096DFD2 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				21A916AA2B7A890500619210 /* Inter-Bold.ttf */,
+				21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */,
+				21A916AE2B7A890500619210 /* Inter-ExtraLight.ttf */,
+				21A916AD2B7A890500619210 /* Inter-Light.ttf */,
+				21A916AB2B7A890500619210 /* Inter-Medium.ttf */,
+				21A916AF2B7A890500619210 /* Inter-Regular.ttf */,
+				21A916A92B7A890500619210 /* Inter-SemiBold.ttf */,
+				21A916AC2B7A890500619210 /* Inter-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		21A916B92B7A892D00619210 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				213573902B69820200781620 /* TimerModel.swift */,
+				21A916BA2B7A89FC00619210 /* APPDataModel.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21A916BD2B7A8B2E00619210 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				213573922B72E64500781620 /* CountdownView.swift */,
+				213573682B6060C300781620 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +288,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A916B12B7A890500619210 /* Inter-SemiBold.ttf in Resources */,
+				21A916B72B7A890500619210 /* Inter-Regular.ttf in Resources */,
 				2135736E2B6060C400781620 /* Preview Assets.xcassets in Resources */,
+				21A916B42B7A890500619210 /* Inter-Thin.ttf in Resources */,
+				21A916B62B7A890500619210 /* Inter-ExtraLight.ttf in Resources */,
+				21A916B82B7A890500619210 /* Inter-ExtraBold.ttf in Resources */,
+				21A916B22B7A890500619210 /* Inter-Bold.ttf in Resources */,
+				21A916B32B7A890500619210 /* Inter-Medium.ttf in Resources */,
 				2135736B2B6060C400781620 /* Assets.xcassets in Resources */,
+				21A916B52B7A890500619210 /* Inter-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */,
 				213573912B69820200781620 /* TimerModel.swift in Sources */,
 				213573692B6060C300781620 /* ContentView.swift in Sources */,
 				213573932B72E64500781620 /* CountdownView.swift in Sources */,
@@ -596,6 +656,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		21A916BA2B7A89FC00619210 /* APPDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				21A916BB2B7A89FC00619210 /* APPDataModel.xcdatamodel */,
+			);
+			currentVersion = 21A916BB2B7A89FC00619210 /* APPDataModel.xcdatamodel */;
+			path = APPDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2135735B2B6060C300781620 /* Project object */;
 }
