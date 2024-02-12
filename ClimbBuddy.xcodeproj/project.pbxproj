@@ -25,6 +25,7 @@
 		21A916B72B7A890500619210 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AF2B7A890500619210 /* Inter-Regular.ttf */; };
 		21A916B82B7A890500619210 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */; };
 		21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21A916BA2B7A89FC00619210 /* APPDataModel.xcdatamodeld */; };
+		21A916C12B7AA49E00619210 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A916C02B7AA49E00619210 /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		21A916AF2B7A890500619210 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		21A916BB2B7A89FC00619210 /* APPDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APPDataModel.xcdatamodel; sourceTree = "<group>"; };
+		21A916C02B7AA49E00619210 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				213573902B69820200781620 /* TimerModel.swift */,
 				21A916BA2B7A89FC00619210 /* APPDataModel.xcdatamodeld */,
+				21A916C02B7AA49E00619210 /* TimerViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				213573912B69820200781620 /* TimerModel.swift in Sources */,
 				213573692B6060C300781620 /* ContentView.swift in Sources */,
 				213573932B72E64500781620 /* CountdownView.swift in Sources */,
+				21A916C12B7AA49E00619210 /* TimerViewModel.swift in Sources */,
 				213573672B6060C300781620 /* ClimbBuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
