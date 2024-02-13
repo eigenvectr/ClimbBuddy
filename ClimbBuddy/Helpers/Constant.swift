@@ -8,9 +8,6 @@
 import Foundation
 import SwiftUI
 
-import Foundation
-import SwiftUI
-
 let dSize = UIScreen.main.bounds.size
 
 struct color {
