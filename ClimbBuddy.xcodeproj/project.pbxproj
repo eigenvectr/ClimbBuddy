@@ -26,6 +26,7 @@
 		21A916B82B7A890500619210 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */; };
 		21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21A916BA2B7A89FC00619210 /* APPDataModel.xcdatamodeld */; };
 		21A916C12B7AA49E00619210 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A916C02B7AA49E00619210 /* TimerViewModel.swift */; };
+		21A916C42B7BFD1800619210 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A916C32B7BFD1800619210 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		21A916B02B7A890500619210 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		21A916BB2B7A89FC00619210 /* APPDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APPDataModel.xcdatamodel; sourceTree = "<group>"; };
 		21A916C02B7AA49E00619210 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		21A916C32B7BFD1800619210 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		213573652B6060C300781620 /* ClimbBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				21A916C22B7BFCF000619210 /* Helpers */,
 				21A916BD2B7A8B2E00619210 /* Views */,
 				21A916B92B7A892D00619210 /* Models */,
 				215FC96C2B7A87AB0096DFD2 /* Font */,
@@ -185,6 +188,14 @@
 				213573682B6060C300781620 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		21A916C22B7BFCF000619210 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				21A916C32B7BFD1800619210 /* Constant.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A916C42B7BFD1800619210 /* Constant.swift in Sources */,
 				21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */,
 				213573912B69820200781620 /* TimerModel.swift in Sources */,
 				213573692B6060C300781620 /* ContentView.swift in Sources */,
