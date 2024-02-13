@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyTimers: Identifiable,Equatable {
+struct MyTimer: Identifiable,Equatable {
     var id = UUID().uuidString
     var name:String = ""
     var duration: String = ""
@@ -24,5 +24,5 @@ struct MyExercise: Identifiable ,Equatable{
 struct FolderItem : Identifiable{
     var id = UUID()
     var title: String
-    var timers: [MyTimers] // A folder contains an array of timers
+    var timers: [MyTimer] // A folder contains an array of timers
 }

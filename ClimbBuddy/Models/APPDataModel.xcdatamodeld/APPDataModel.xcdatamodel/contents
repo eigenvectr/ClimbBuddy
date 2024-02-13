@@ -3,13 +3,13 @@
     <entity name="Tbl_Exercise" representedClassName="Tbl_Exercise" syncable="YES" codeGenerationType="class">
         <attribute name="duration" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="timer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Timer"/>
+        <relationship name="timer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Exercise"/>
     </entity>
     <entity name="Tbl_Timer" representedClassName="Tbl_Timer" syncable="YES" codeGenerationType="class">
         <attribute name="duration" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="numberOfSets" optional="YES" attributeType="String"/>
-        <relationship name="exercises" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Exercise"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tbl_Timer"/>
     </entity>
 </model>
