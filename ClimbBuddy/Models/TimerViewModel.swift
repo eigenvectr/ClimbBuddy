@@ -49,7 +49,14 @@ class TimerViewModel: ObservableObject{
         }
     }
     
-    //saveTimers
+    func saveContext() {
+        do{
+            try context.save()
+        }
+        catch{
+            print("saving error:",error.localizedDescription)
+        }
+    }
     
     //updateTimers
     
