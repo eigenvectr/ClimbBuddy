@@ -115,8 +115,43 @@ class TimerViewModel: ObservableObject{
             print("Error deleting item: \(error)")
         }
     }
-
     
-    //updateTimers
-    
+    func updateTimerRecord(_ myTimer: MyTimer) {
+        // Set up a fetch request to find the Tbl_Timer object by its ID
+        let fetchReq: NSFetchRequest<Tbl_Timer> = Tbl_Timer.fetchRequest()
+        fetchReq.predicate = NSPredicate(format: "id == %@", myTimer.id)
+        
+        do {
+            // Attempt to execute the fetch request
+            let results = try context.fetch(fetchReq)
+            
+            // Ensure we have a timer to update
+            if let timerData = results.first {
+                // Update the timer properties
+                timerData.name = myTimer.name
+                timerData.duration = myTimer.duration
+                timerData.numberOfSets = myTimer.numberOfSets
+                timerData.id = myTimer.id
+                
+                // Remove all existing exercises
+                if let exercises = timerData.exercises as? Set<Tbl_Exercise> {
+                    exercises.forEach(context.delete)
+                }
+                
+                // Add updated exercises
+                myTimer.exercises.forEach { exercise in
+                    let tmrData = Tbl_Exercise(context: context)
+                    tmrData.name = exercise.name
+                    tmrData.duration = exercise.duration
+                    timerData.addToExercises(tmrData)
+                }
+                
+                // Save the context after making all updates
+                try context.save()
+            }
+        } catch {
+            // Log error if timer update fails
+            print("Error updating timer: \(error.localizedDescription)")
+        }
+    }
 }
