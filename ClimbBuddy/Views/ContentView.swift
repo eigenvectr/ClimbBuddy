@@ -6,20 +6,23 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
     
     var body: some View {
         TabView{
+            TimerListView()
+                .tabItem {
+                    Image(systemName: "timer")
+                    Text("Timers")
+                }
             CountdownView()
-                .tabItem { 
+                .tabItem {
                     Image(systemName: "arrow.down.right.and.arrow.up.left.circle")
                     Text("Countdown")
                 }
         }
     }
 }
-
 #Preview {
     ContentView()
 }

@@ -9,6 +9,7 @@ import Foundation
 
 struct MyTimer: Identifiable,Equatable {
     var id = UUID().uuidString
+    var folderId: String = "non"
     var name:String = ""
     var duration: String = ""
     var numberOfSets: String = ""
@@ -21,8 +22,9 @@ struct MyExercise: Identifiable ,Equatable{
     var duration: String = ""
 }
 
-struct FolderItem : Identifiable{
-    var id = UUID()
-    var title: String
-    var timers: [MyTimer] // A folder contains an array of timers
+struct Folder:Identifiable {
+    var id = UUID().uuidString
+    var isExpand:Bool = false
+    var folderName: String = ""
+    var myTimers:[MyTimer] = []
 }

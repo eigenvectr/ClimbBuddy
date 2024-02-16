@@ -16,6 +16,10 @@
 		213573842B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */; };
 		213573912B69820200781620 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573902B69820200781620 /* TimerModel.swift */; };
 		213573932B72E64500781620 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573922B72E64500781620 /* CountdownView.swift */; };
+		219793C92B80169100B51274 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793C82B80169100B51274 /* DropViewDelegate.swift */; };
+		219793CB2B8017B100B51274 /* SwipeToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CA2B8017B100B51274 /* SwipeToDelete.swift */; };
+		219793CD2B8017E100B51274 /* DragAndDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */; };
+		219793CF2B80216C00B51274 /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CE2B80216C00B51274 /* TimerListView.swift */; };
 		21A916B12B7A890500619210 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916A92B7A890500619210 /* Inter-SemiBold.ttf */; };
 		21A916B22B7A890500619210 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AA2B7A890500619210 /* Inter-Bold.ttf */; };
 		21A916B32B7A890500619210 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AB2B7A890500619210 /* Inter-Medium.ttf */; };
@@ -59,6 +63,10 @@
 		213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		213573902B69820200781620 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		213573922B72E64500781620 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		219793C82B80169100B51274 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
+		219793CA2B8017B100B51274 /* SwipeToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDelete.swift; sourceTree = "<group>"; };
+		219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropDelegate.swift; sourceTree = "<group>"; };
+		219793CE2B80216C00B51274 /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
 		21A916A92B7A890500619210 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		21A916AA2B7A890500619210 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		21A916AB2B7A890500619210 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 			children = (
 				213573922B72E64500781620 /* CountdownView.swift */,
 				213573682B6060C300781620 /* ContentView.swift */,
+				219793CE2B80216C00B51274 /* TimerListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				21A916C32B7BFD1800619210 /* Constant.swift */,
+				219793C82B80169100B51274 /* DropViewDelegate.swift */,
+				219793CA2B8017B100B51274 /* SwipeToDelete.swift */,
+				219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -340,9 +352,13 @@
 				21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */,
 				213573912B69820200781620 /* TimerModel.swift in Sources */,
 				213573692B6060C300781620 /* ContentView.swift in Sources */,
+				219793C92B80169100B51274 /* DropViewDelegate.swift in Sources */,
 				213573932B72E64500781620 /* CountdownView.swift in Sources */,
 				21A916C12B7AA49E00619210 /* TimerViewModel.swift in Sources */,
+				219793CD2B8017E100B51274 /* DragAndDropDelegate.swift in Sources */,
+				219793CF2B80216C00B51274 /* TimerListView.swift in Sources */,
 				213573672B6060C300781620 /* ClimbBuddyApp.swift in Sources */,
+				219793CB2B8017B100B51274 /* SwipeToDelete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

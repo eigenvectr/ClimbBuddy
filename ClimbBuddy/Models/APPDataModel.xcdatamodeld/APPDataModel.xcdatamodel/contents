@@ -5,11 +5,18 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="timer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Timer"/>
     </entity>
+    <entity name="Tbl_Folder" representedClassName="Tbl_Folder" syncable="YES" codeGenerationType="class">
+        <attribute name="folderName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="timer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tbl_Timer"/>
+    </entity>
     <entity name="Tbl_Timer" representedClassName="Tbl_Timer" syncable="YES" codeGenerationType="class">
         <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="folderId" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="numberOfSets" optional="YES" attributeType="String"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tbl_Exercise"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tbl_Folder"/>
     </entity>
 </model>

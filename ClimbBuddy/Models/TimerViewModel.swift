@@ -5,54 +5,184 @@
 //  Created by Edward Laurence on 2/12/24.
 //
 
-import Foundation
 import CoreData
+import Foundation
 import UIKit
 import Combine
 
 class TimerViewModel: ObservableObject{
     @Published var myTimers : [MyTimer] = []
+    @Published var folderArray: [Folder] = []
     
     let context = PersistenceController.shared.container.viewContext
     
-    init(){
+    init() {
         getTimerRecords()
+        getFolderRecords()
     }
     
-    // Function to fetch timer records from Core Data
     func getTimerRecords() {
-        self.myTimers = [] // Clears the existing timers to prepare for fresh data
-        // Define a fetch request for Tbl_Timer objects
+        // Reset the current array of timers to ensure it's empty before fetching new records
+        self.myTimers = []
+        // Create a fetch request for Tbl_Timer entities
         let fetchReq: NSFetchRequest<Tbl_Timer> = Tbl_Timer.fetchRequest()
         do {
-            // Execute the fetch request to retrieve an array of Tbl_Timer instances
+            // Attempt to execute the fetch request and store the results in 'array'
             let array = try context.fetch(fetchReq)
-            
-            // Iterate over each fetched Tbl_Timer object
+            // Iterate through each fetched Tbl_Timer object
             for i in array {
-                var exe: [MyExercise] = [] // Initialize an empty array for MyExercise
-                
-                // Attempt to cast the 'exercises' relationship to a Set of Tbl_Exercise
-                if let exercisesSet = i.exercises as? Set<Tbl_Exercise> {
-                    let exercisesArray = Array(exercisesSet) // Convert the set to an array
-                    
-                    // Iterate over the exercises array to populate the MyExercise array
-                    for e in exercisesArray {
-                        exe.append(MyExercise(name: e.name ?? "", duration: e.duration ?? ""))
+                // Debug print the folderId of each timer (if present)
+                print("FID->", i.folderId ?? "nil")
+                // Check if the current timer does not belong to any folder
+                if i.folderId == nil {
+                    // Initialize an empty array to hold MyExercise objects
+                    var exe: [MyExercise] = []
+                    // Attempt to cast the 'exercises' relationship to a set of Tbl_Exercise
+                    if let exercisesSet = i.exercises as? Set<Tbl_Exercise> {
+                        // Convert the set to an array for easier iteration
+                        let exercisesArray = Array(exercisesSet)
+                        // Iterate through each Tbl_Exercise object in the set
+                        for e in exercisesArray {
+                            // Create a MyExercise object with properties from Tbl_Exercise
+                            // and append it to the 'exe' array
+                            exe.append(MyExercise(name: e.name ?? "", duration: e.duration ?? ""))
+                        }
                     }
+                    // Append a new MyTimer object to the 'myTimers' array with properties
+                    // from the current Tbl_Timer and the exercises array
+                    myTimers.append(MyTimer(id: i.id ?? "", name: i.name ?? "", duration: i.duration ?? "", numberOfSets: i.numberOfSets ?? "0", exercises: exe))
                 }
-                
-                // Append a new MyTimers object to the myTimers array with data from the current Tbl_Timer
-                self.myTimers.append(MyTimer(id: i.id ?? UUID().uuidString, name: i.name ?? "", duration: i.duration ?? "", numberOfSets: i.numberOfSets ?? "0", exercises: exe))
             }
-            // Debugging: logging amount of fetched timers
-            print("Fetched timers:", array.count)
+            // print the total number of timers fetched
+            print("timers:", array.count)
         } catch {
-            // Logging an error if the fetch operation fails
-            print("Could not load timer data: \(error.localizedDescription)")
+            // print an error message
+            print("Could not load save data: \(error.localizedDescription)")
         }
     }
     
+    func getFolderRecords() {
+        
+        self.folderArray = []
+        
+        let fetchReq: NSFetchRequest<Tbl_Folder> = Tbl_Folder.fetchRequest()
+        
+        do {
+            let array = try context.fetch(fetchReq)
+            
+            print("a->", array)
+            
+            for i in array {
+                var time:[MyTimer] = []
+                
+                
+                
+                if let exercisesSet = i.timer as? Set<Tbl_Timer> {
+                    let exercisesArray = Array(exercisesSet)
+                    
+                    for t in exercisesArray {
+                        var exe: [MyExercise] = []
+                        if let exercisesSet = t.exercises as? Set<Tbl_Exercise> {
+                            let exercisesArray = Array(exercisesSet)
+                            
+                            for e in exercisesArray {
+                                exe.append(MyExercise(name: e.name ?? "", duration: e.duration ?? ""))
+                            }
+                        }
+                        time.append(MyTimer(id: t.id ?? UUID().uuidString,name: t.name ?? "", duration: t.duration ?? "",numberOfSets: t.numberOfSets!,exercises: exe))
+                    }
+                }
+                folderArray.append(Folder(id:i.id ?? "",isExpand: false, folderName: i.folderName!,myTimers: time))
+            }
+            print("Folder:", array.count)
+        } catch {
+            print("Could not load save data: \(error.localizedDescription)")
+        }
+    }
+    
+    func saveFolderDataCD(_ folder: Folder) {
+        
+        let folderData = Tbl_Folder(context: context)
+        folderData.id = folder.id
+        folderData.folderName = folder.folderName
+        for i in folder.myTimers {
+            let timerData = Tbl_Timer(context: context)
+            print("F->",i.folderId)
+            timerData.name = i.name
+            timerData.duration = i.duration
+            timerData.numberOfSets = i.numberOfSets
+            timerData.folderId = i.folderId
+            folderData.addToTimer(timerData)
+            
+            for (_,obj) in i.exercises.enumerated() {
+                
+                let tmrData = Tbl_Exercise(context:context)
+                tmrData.name = obj.name
+                tmrData.duration = obj.duration
+                timerData.addToExercises(tmrData)
+            }
+            
+            saveContext()
+        }
+        saveContext()
+    }
+        
+    func addTimerToExistingFolder(itame: Folder,newTimer:MyTimer) {
+        do {
+            // Fetch the existing folder from Core Data
+            let fetchRequest: NSFetchRequest<Tbl_Folder> = Tbl_Folder.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", itame.id)
+            
+            if let existingFolder = fetchFolderById(itame.id) {
+                // Create a new timer
+                
+                print("add exxisting folder",itame,newTimer)
+                
+                let timerData = Tbl_Timer(context: context)
+                
+                print("number of set", newTimer.numberOfSets)
+                timerData.folderId = itame.folderName
+                timerData.numberOfSets = newTimer.numberOfSets
+                timerData.name = newTimer.name
+                timerData.duration = newTimer.duration
+                timerData.id = UUID().uuidString
+                
+                for (_,obj) in newTimer.exercises.enumerated() {
+                    
+                    print("obj->",obj)
+                    
+                    let tmrData = Tbl_Exercise(context:context)
+                    tmrData.name = obj.name
+                    tmrData.duration = obj.duration
+                    timerData.addToExercises(tmrData)
+                }
+                
+                existingFolder.addToTimer(timerData)
+                
+                // Save changes to Core Data
+                try context.save()
+                print("Timer added to existing folder successfully\(existingFolder)")
+            } else {
+                print("Folder not found with ID:")
+            }
+        } catch {
+            print("Failed to add timer to existing folder: \(error.localizedDescription)")
+        }
+    }
+    
+    private func fetchFolderById(_ folderId: String) -> Tbl_Folder? {
+        let fetchRequest: NSFetchRequest<Tbl_Folder> = Tbl_Folder.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", folderId)
+
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.first
+        } catch {
+            print("Error fetching folder by ID: \(error.localizedDescription)")
+            return nil
+        }
+    }
+
     func saveContext() {
         do{
             try context.save()
