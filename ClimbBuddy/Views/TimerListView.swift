@@ -64,6 +64,7 @@ struct TimerListView: View{
             }
             .background(color.appBGColor)
             .navigationTitle("My Timers")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 trailing:
                     HStack(spacing:15){

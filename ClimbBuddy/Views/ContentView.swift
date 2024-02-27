@@ -10,7 +10,9 @@ struct ContentView: View {
     
     var body: some View {
         TabView{
-            TimerListView()
+            NavigationView{
+                TimerListView()
+            }
                 .tabItem {
                     Image(systemName: "timer")
                     Text("Timers")

@@ -55,7 +55,7 @@ struct NewFolderPopup: View {
                             ZStack{
                                 color.appBGColor
                                     .cornerRadius(15)
-                                Text("Cancle")
+                                Text("Cancel")
                                     .font(.custom(CustomFont.semiBold, size: 15))
                             }.frame(width: 166,height: 40)
                         })
