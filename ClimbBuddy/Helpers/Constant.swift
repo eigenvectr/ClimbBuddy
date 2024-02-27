@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+enum Action{
+    case addNew
+    case edit
+}
 let dSize = UIScreen.main.bounds.size
 
 struct color {

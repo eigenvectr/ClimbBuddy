@@ -13,6 +13,7 @@ import Combine
 class TimerViewModel: ObservableObject{
     @Published var myTimers : [MyTimer] = []
     @Published var folderArray: [Folder] = []
+    //    ["My Folder1":["uuid","uuid"],"My Folder2":["uuid","uuid"]]
     
     let context = PersistenceController.shared.container.viewContext
     
@@ -74,8 +75,6 @@ class TimerViewModel: ObservableObject{
             
             for i in array {
                 var time:[MyTimer] = []
-                
-                
                 
                 if let exercisesSet = i.timer as? Set<Tbl_Timer> {
                     let exercisesArray = Array(exercisesSet)
@@ -170,6 +169,22 @@ class TimerViewModel: ObservableObject{
         }
     }
     
+    func deleteFolderItem(_ myFolder: Folder) {
+        let fetchRequest: NSFetchRequest<Tbl_Folder> = Tbl_Folder.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", myFolder.id)
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let timerToDelete = results.first {
+                context.delete(timerToDelete)
+                folderArray.removeAll { $0.id == myFolder.id }
+                try context.save()
+            }
+        } catch {
+            print("Error deleting item: \(error)")
+        }
+    }
+    
     private func fetchFolderById(_ folderId: String) -> Tbl_Folder? {
         let fetchRequest: NSFetchRequest<Tbl_Folder> = Tbl_Folder.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", folderId)
@@ -246,42 +261,37 @@ class TimerViewModel: ObservableObject{
         }
     }
     
-    func updateTimerRecord(_ myTimer: MyTimer) {
-        // Set up a fetch request to find the Tbl_Timer object by its ID
-        let fetchReq: NSFetchRequest<Tbl_Timer> = Tbl_Timer.fetchRequest()
-        fetchReq.predicate = NSPredicate(format: "id == %@", myTimer.id)
+    func updateTimerRecord(_myTimer: MyTimer){
+        
+        let fetchReq :NSFetchRequest<Tbl_Timer>
+        fetchReq = Tbl_Timer.fetchRequest()
+        fetchReq.predicate =  NSPredicate(format: "id == %@", _myTimer.id)
+        
+        let getData = try? self.context.fetch(fetchReq)
+        
+        let timerData = getData![0]
+        timerData.name = _myTimer.name
+        timerData.duration = _myTimer.duration
+        timerData.numberOfSets = _myTimer.numberOfSets
+        timerData.id = _myTimer.id
+        
+        timerData.removeFromExercises(timerData.exercises!)
+        
+        for (_,obj) in _myTimer.exercises.enumerated() {
+            
+            print("obj->",obj)
+            
+            let tmrData = Tbl_Exercise(context:context)
+            tmrData.name = obj.name
+            tmrData.duration = obj.duration
+            timerData.addToExercises(tmrData)
+        }
         
         do {
-            // Attempt to execute the fetch request
-            let results = try context.fetch(fetchReq)
-            
-            // Ensure we have a timer to update
-            if let timerData = results.first {
-                // Update the timer properties
-                timerData.name = myTimer.name
-                timerData.duration = myTimer.duration
-                timerData.numberOfSets = myTimer.numberOfSets
-                timerData.id = myTimer.id
-                
-                // Remove all existing exercises
-                if let exercises = timerData.exercises as? Set<Tbl_Exercise> {
-                    exercises.forEach(context.delete)
-                }
-                
-                // Add updated exercises
-                myTimer.exercises.forEach { exercise in
-                    let tmrData = Tbl_Exercise(context: context)
-                    tmrData.name = exercise.name
-                    tmrData.duration = exercise.duration
-                    timerData.addToExercises(tmrData)
-                }
-                
-                // Save the context after making all updates
-                try context.save()
-            }
-        } catch {
-            // Log error if timer update fails
-            print("Error updating timer: \(error.localizedDescription)")
+            try context.save()
+        }
+        catch {
+            print("saving error:",error.localizedDescription)
         }
     }
 }

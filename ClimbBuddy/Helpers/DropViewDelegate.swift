@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct DropViewDelegate: DropDelegate{
+struct DropViewDelegate: DropDelegate {
     var item: MyExercise
     @Binding var items: [MyExercise]
-    var currentItem : MyExercise
+    var currentItem : MyExercise?
     
     func performDrop(info: DropInfo) -> Bool {
         return true
@@ -19,7 +19,7 @@ struct DropViewDelegate: DropDelegate{
     
     func dropEntered(info: DropInfo) {
         let fromIndex = items.firstIndex{ item -> Bool in
-            return item.id == currentItem.id
+            return item.id == currentItem?.id
         } ?? 0
         
         let toIndex = items.firstIndex{ item -> Bool in

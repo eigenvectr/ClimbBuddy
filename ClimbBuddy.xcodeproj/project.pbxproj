@@ -20,6 +20,10 @@
 		219793CB2B8017B100B51274 /* SwipeToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CA2B8017B100B51274 /* SwipeToDelete.swift */; };
 		219793CD2B8017E100B51274 /* DragAndDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */; };
 		219793CF2B80216C00B51274 /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CE2B80216C00B51274 /* TimerListView.swift */; };
+		219793D72B892C2A00B51274 /* AddEditTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793D62B892C2A00B51274 /* AddEditTimerView.swift */; };
+		219793DA2B892C9E00B51274 /* ExercisePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793D92B892C9E00B51274 /* ExercisePopup.swift */; };
+		219793DC2B892FB200B51274 /* WorkoutTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793DB2B892FB200B51274 /* WorkoutTimerView.swift */; };
+		219793E02B89301100B51274 /* NewFolderPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793DF2B89301100B51274 /* NewFolderPopup.swift */; };
 		21A916B12B7A890500619210 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916A92B7A890500619210 /* Inter-SemiBold.ttf */; };
 		21A916B22B7A890500619210 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AA2B7A890500619210 /* Inter-Bold.ttf */; };
 		21A916B32B7A890500619210 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21A916AB2B7A890500619210 /* Inter-Medium.ttf */; };
@@ -67,6 +71,10 @@
 		219793CA2B8017B100B51274 /* SwipeToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDelete.swift; sourceTree = "<group>"; };
 		219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropDelegate.swift; sourceTree = "<group>"; };
 		219793CE2B80216C00B51274 /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
+		219793D62B892C2A00B51274 /* AddEditTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTimerView.swift; sourceTree = "<group>"; };
+		219793D92B892C9E00B51274 /* ExercisePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePopup.swift; sourceTree = "<group>"; };
+		219793DB2B892FB200B51274 /* WorkoutTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimerView.swift; sourceTree = "<group>"; };
+		219793DF2B89301100B51274 /* NewFolderPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFolderPopup.swift; sourceTree = "<group>"; };
 		21A916A92B7A890500619210 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		21A916AA2B7A890500619210 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		21A916AB2B7A890500619210 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
@@ -179,6 +187,15 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		219793D82B892C8600B51274 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				219793D92B892C9E00B51274 /* ExercisePopup.swift */,
+				219793DF2B89301100B51274 /* NewFolderPopup.swift */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
 		21A916B92B7A892D00619210 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,9 +209,12 @@
 		21A916BD2B7A8B2E00619210 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				219793D82B892C8600B51274 /* Popups */,
 				213573922B72E64500781620 /* CountdownView.swift */,
 				213573682B6060C300781620 /* ContentView.swift */,
 				219793CE2B80216C00B51274 /* TimerListView.swift */,
+				219793D62B892C2A00B51274 /* AddEditTimerView.swift */,
+				219793DB2B892FB200B51274 /* WorkoutTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219793D72B892C2A00B51274 /* AddEditTimerView.swift in Sources */,
 				21A916C42B7BFD1800619210 /* Constant.swift in Sources */,
 				21A916BC2B7A89FC00619210 /* APPDataModel.xcdatamodeld in Sources */,
 				213573912B69820200781620 /* TimerModel.swift in Sources */,
@@ -355,9 +376,12 @@
 				219793C92B80169100B51274 /* DropViewDelegate.swift in Sources */,
 				213573932B72E64500781620 /* CountdownView.swift in Sources */,
 				21A916C12B7AA49E00619210 /* TimerViewModel.swift in Sources */,
+				219793DC2B892FB200B51274 /* WorkoutTimerView.swift in Sources */,
 				219793CD2B8017E100B51274 /* DragAndDropDelegate.swift in Sources */,
 				219793CF2B80216C00B51274 /* TimerListView.swift in Sources */,
 				213573672B6060C300781620 /* ClimbBuddyApp.swift in Sources */,
+				219793DA2B892C9E00B51274 /* ExercisePopup.swift in Sources */,
+				219793E02B89301100B51274 /* NewFolderPopup.swift in Sources */,
 				219793CB2B8017B100B51274 /* SwipeToDelete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
