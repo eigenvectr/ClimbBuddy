@@ -35,6 +35,9 @@ struct WorkoutTimerView: View {
     
     @State var isButtonDisabled = false
     
+    @State private var workoutComplete = false
+
+    
     var body: some View {
         VStack{
             VStack(spacing:20){
@@ -163,6 +166,14 @@ struct WorkoutTimerView: View {
         .background(color.appBGColor)
         .foregroundColor(Color.white)
         .navigationBarHidden(true)
+        .alert(isPresented: $workoutComplete) {
+                    Alert(
+                        title: Text("Workout Complete!"),
+                        message: Text("Congratulations, you have completed your workout! 👏👏👏"),
+                        dismissButton: .default(Text("OK")) {
+                        }
+                    )
+                }
         .onAppear{
             getAllDuration()
             if !durations.isEmpty {
@@ -282,6 +293,7 @@ struct WorkoutTimerView: View {
                     getAllDuration()
                 }
                 else {
+                    workoutComplete = true
                     currentSetsIndex = 0
                     getAllDuration()
                 }
