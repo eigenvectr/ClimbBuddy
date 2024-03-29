@@ -222,6 +222,12 @@ struct WorkoutTimerView: View {
         .frame(maxWidth: .infinity,minHeight: 90)
         .background(self.currentDurationIndex == index ? color.appThemeColor : color.appCardColor)
         .cornerRadius(15)
+        .onTapGesture{
+            self.currentDurationIndex = index
+            setTotalTime(duration: myTimer.exercises[index].duration)
+            updateTimerLabels()
+            startTimer()
+        }
     }
     
     func getAllDuration() {
