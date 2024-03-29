@@ -175,10 +175,16 @@ struct WorkoutTimerView: View {
                     )
                 }
         .onAppear{
+            // Disable the idle timer to keep the screen on
+            UIApplication.shared.isIdleTimerDisabled = true
             getAllDuration()
             if !durations.isEmpty {
                 setTotalTime(duration: durations[currentDurationIndex])
             }
+        }
+        .onDisappear{
+            // enable the idle timer to keep the screen on
+            UIApplication.shared.isIdleTimerDisabled = false
         }
     }
     func topBar()-> some View {
