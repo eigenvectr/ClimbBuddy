@@ -168,8 +168,8 @@ struct WorkoutTimerView: View {
         .navigationBarHidden(true)
         .alert(isPresented: $workoutComplete) {
                     Alert(
-                        title: Text("Workout Complete!"),
-                        message: Text("Congratulations, you have completed your workout! 👏👏👏"),
+                        title: Text("Timer Complete!"),
+                        message: Text("👏👏👏"),
                         dismissButton: .default(Text("OK")) {
                         }
                     )
