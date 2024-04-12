@@ -16,6 +16,7 @@
 		213573842B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */; };
 		213573912B69820200781620 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573902B69820200781620 /* TimerModel.swift */; };
 		213573932B72E64500781620 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213573922B72E64500781620 /* CountdownView.swift */; };
+		213C1DDE2BC5DE28006EEE2D /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 213C1DDD2BC5DE28006EEE2D /* beep.mp3 */; };
 		219793C92B80169100B51274 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793C82B80169100B51274 /* DropViewDelegate.swift */; };
 		219793CB2B8017B100B51274 /* SwipeToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CA2B8017B100B51274 /* SwipeToDelete.swift */; };
 		219793CD2B8017E100B51274 /* DragAndDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */; };
@@ -67,6 +68,7 @@
 		213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		213573902B69820200781620 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		213573922B72E64500781620 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		213C1DDD2BC5DE28006EEE2D /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = ../../../../Downloads/beep.mp3; sourceTree = "<group>"; };
 		219793C82B80169100B51274 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		219793CA2B8017B100B51274 /* SwipeToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDelete.swift; sourceTree = "<group>"; };
 		219793CC2B8017E100B51274 /* DragAndDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		213573652B6060C300781620 /* ClimbBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				213C1DDC2BC5DE17006EEE2D /* Sounds */,
 				21A916C22B7BFCF000619210 /* Helpers */,
 				21A916BD2B7A8B2E00619210 /* Views */,
 				21A916B92B7A892D00619210 /* Models */,
@@ -170,6 +173,14 @@
 				213573832B6060C400781620 /* ClimbBuddyUITestsLaunchTests.swift */,
 			);
 			path = ClimbBuddyUITests;
+			sourceTree = "<group>";
+		};
+		213C1DDC2BC5DE17006EEE2D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				213C1DDD2BC5DE28006EEE2D /* beep.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		215FC96C2B7A87AB0096DFD2 /* Font */ = {
@@ -336,6 +347,7 @@
 			files = (
 				21A916B12B7A890500619210 /* Inter-SemiBold.ttf in Resources */,
 				21A916B72B7A890500619210 /* Inter-Regular.ttf in Resources */,
+				213C1DDE2BC5DE28006EEE2D /* beep.mp3 in Resources */,
 				2135736E2B6060C400781620 /* Preview Assets.xcassets in Resources */,
 				21A916B42B7A890500619210 /* Inter-Thin.ttf in Resources */,
 				21A916B62B7A890500619210 /* Inter-ExtraLight.ttf in Resources */,

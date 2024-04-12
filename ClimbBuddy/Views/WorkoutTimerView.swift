@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVFAudio
 
 struct WorkoutTimerView: View {
     
@@ -36,6 +37,8 @@ struct WorkoutTimerView: View {
     @State var isButtonDisabled = false
     
     @State private var workoutComplete = false
+    
+    @State var audioPlayer: AVAudioPlayer!
 
     
     var body: some View {
@@ -268,6 +271,7 @@ struct WorkoutTimerView: View {
         if isTimerRunning {
             return
         }
+        playSound(named: "beep.mp3")
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             // Code to be executed on each timer tick
             updateTimer()
@@ -294,6 +298,7 @@ struct WorkoutTimerView: View {
                 // Move to the next duration
                 currentDurationIndex += 1
                 setTotalTime(duration: durations[currentDurationIndex])
+                playSound(named: "beep.mp3")
                 startTimer()
             } else {
                 resetTimer()
@@ -320,6 +325,21 @@ struct WorkoutTimerView: View {
         isTimerRunning = false
         self.playPausename = "ic_play"
         updateTimerLabels()
+    }
+    
+    func playSound(named soundName: String) {
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: nil) else {
+            print("Sound file not found: \(soundName)")
+            return
+        }
+
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch {
+            print("Could not load file: \(error)")
+        }
     }
 }
 
